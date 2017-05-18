@@ -8,7 +8,7 @@ int sumOfDivisors(int num)
     int sum=1;
     int max=sqrt(num);
     
-    for (int i=2;i<num;i++)
+    for (int i=2;i<max;i++)
     {
         if ((num % i)==0)
             sum+=i;
