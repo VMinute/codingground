@@ -5,10 +5,10 @@ using namespace std;
 
 int sumOfDivisors(int num)
 {
-    int sum=1+num;
+    int sum=1;
     int max=num/2;
     
-    for (int i=2;i<max;i++)
+    for (int i=2;i<=max;i++)
     {
         if ((num % i)==0)
             sum+=i;
