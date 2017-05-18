@@ -5,8 +5,8 @@ using namespace std;
 
 int sumOfDivisors(int num)
 {
-    int sum=1;
-    int max=sqrt(num);
+    int sum=1+num;
+    int max=num/2;
     
     for (int i=2;i<max;i++)
     {
