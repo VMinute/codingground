@@ -1,6 +1,7 @@
 // Example program
 #include <iostream>
 #include <cmath>
+#include <unordered_set>
 
 using namespace std;
 
@@ -78,6 +79,8 @@ int main()
     int count=0;
     long sum=0;
     
+    unordered_set<int> products;
+    
     // we have max 9 digits, so we can consider 
     for (int a=1;a<=9999;a++)
     {
@@ -93,7 +96,7 @@ int main()
                 continue;
                 
             int prod=a*b;
-            
+                        
             if (!uniqueDigits(prod))
                 continue;
             
@@ -102,9 +105,13 @@ int main()
                 // we used all 9 digits?
                 if (countDigits(a)+countDigits(b)+countDigits(prod)==9)
                 {
-                    cout << a << "*" << b << "=" << prod << "\r\n";
-                    count++;
-                    sum+=prod;
+                    if (products.find(prod)==products.end())
+                    {
+                        cout << a << "*" << b << "=" << prod << "\r\n";
+                        count++;
+                        sum+=prod;
+                        products.insert(prod);
+                    }
                 }
             }
         }
